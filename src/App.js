@@ -1,12 +1,12 @@
-import React from 'react'
-import Counter from './Components/Counter'
+import React from "react";
+import Layout from "./Components/Routers/Layout";
 
 const App = () => {
   return (
     <div>
-    <Counter />
+      <Layout />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
