@@ -8,9 +8,9 @@ const App = () => {
   return (
     <div>
       <Layout />
-      <UseDebugValueExample />
+      {/* <UseDebugValueExample />
       <CustomHookComp />
-      <Json />
+      <Json /> */}
     </div>
   );
 };
