@@ -21,3 +21,4 @@ export const ABOUT_USE_CONTEXT_CONSUMER =
   "/crack-react-interview/about-use-context-consumer";
 export const ABOUT_USE_CONTEXT_DISPLAY =
   "/crack-react-interview/about-use-context-display";
+export const ABOUT_PERFORMANCE = "/crack-react-interview/about-performance";

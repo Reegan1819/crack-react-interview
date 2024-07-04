@@ -1,6 +1,6 @@
 import React from "react";
 
-const UseLayoutEffect = () => {
+const AboutUseLayoutEffect = () => {
   return (
     <div style={{ padding: "20px" }}>
       <h1>About useLayoutEffect</h1>
@@ -91,4 +91,4 @@ const UseLayoutEffect = () => {
   );
 };
 
-export default UseLayoutEffect;
+export default AboutUseLayoutEffect;

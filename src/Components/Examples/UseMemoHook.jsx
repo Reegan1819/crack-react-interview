@@ -1,9 +1,48 @@
-import React from "react";
-
+import React, { useEffect } from "react";
 
 const UseMemoHook = () => {
   const [count, setCount] = React.useState(0);
   const [count2, setCount2] = React.useState(0);
+
+  const [profileInfo, setProfileInfo] = React.useState({
+    name: "John Doe",
+    age: 25,
+    email: "reegan@getDefaultNormalizer.com",
+    address: {
+      present: {
+      city: "New York",
+      country: "USA",
+      },
+    },
+    permanent: {
+      city: "New York",
+      country: "USA",
+    },
+  });
+
+  //change city in address
+
+  const changeCity = () => {
+    setProfileInfo({
+      ...profileInfo,
+      address: {
+        ...profileInfo.address,
+        present: {
+          ...profileInfo.address.present,
+          city: "San Francisco",
+        },
+      },
+    });
+  }
+
+ const fetchData = () => {
+    fetch("https://jsonplaceholder.typicode.com/posts")
+      .then((response) => response.json())
+      .then((json) => {
+        console.log(json);
+      });
+  }
+  
 
   const increment = React.useCallback(() => {
     setCount(count + 1);
