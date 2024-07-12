@@ -1,3 +1,4 @@
+import AboutPureComponents from "../AboutPurecomponents";
 import Home from "../Home";
 import AboutHooks from "../ReactFolder/AboutHooks/AboutHooks";
 import AboutUseCallback from "../ReactFolder/AboutHooks/AboutUseCallback";
@@ -11,11 +12,24 @@ import AboutUseLayoutEffect from "../ReactFolder/AboutHooks/UseLayoutEffect";
 import AboutLIfeCycleMethod from "../ReactFolder/AboutLIfeCycleMethod";
 import AboutPerformance from "../ReactFolder/AboutPerformance";
 import AboutReact from "../ReactFolder/AboutReact";
+import AboutTypeScript from "../Typescript/AboutTypeScript";
+import AboutInterfaces from "../Typescript/AboutInterfaces";
+import AboutEnums from "../Typescript/AboutEnums";
+import AboutGenerics from "../Typescript/AboutGenerics";
+import AboutDecorators from "../Typescript/AboutDecorators";
+import AboutModules from "../Typescript/AboutModules";
+import AboutClasses from "../Typescript/AboutClasses";
+import AboutNamespaces from "../Typescript/AboutNameSpaces";
+import AboutRedux from "../Redux/AboutRedux";
+import AboutPureFunction from "../AboutPureFunction";
+import AboutTesting from "../AboutTesting";
 import {
   ABOUT_HOOKS,
   ABOUT_LIFE_CYCLE_METHOD,
   ABOUT_PERFORMANCE,
+  ABOUT_PURE_COMP,
   ABOUT_REACT,
+  ABOUT_TYPE_SCRIPT,
   ABOUT_USE_CALLBACK,
   ABOUT_USE_CONTEXT,
   ABOUT_USE_DEBUG_VALUE,
@@ -24,6 +38,16 @@ import {
   ABOUT_USE_MEMO,
   ABOUT_USE_REDUCER,
   ABOUT_USE_STATE,
+  ABOUT_INTERFACES,
+  ABOUT_ENUMS,
+  ABOUT_GENERICS,
+  ABOUT_DECORATORS,
+  ABOUT_NAMESPACES,
+  ABOUT_MODULES,
+  ABOUT_CLASSES,
+  ABOUT_REDUX,
+  ABOUT_PURE_FUNCTION,
+  ABOUT_TESTING,
 } from "./RouteEndpoints";
 
 export const RouteList = [
@@ -73,23 +97,83 @@ export const RouteList = [
   },
   {
     path: ABOUT_USE_LAYOUT_EFFECT,
-    component: AboutUseLayoutEffect ,
+    component: AboutUseLayoutEffect,
     exact: true,
   },
   {
     path: ABOUT_USE_MEMO,
-    component: AboutUseMemo  ,
+    component: AboutUseMemo,
     exact: true,
   },
   {
     path: ABOUT_USE_DEBUG_VALUE,
-    component: AboutUseDebugValue  ,
+    component: AboutUseDebugValue,
     exact: true,
   },
   {
     path: ABOUT_PERFORMANCE,
-    component: AboutPerformance  ,
+    component: AboutPerformance,
+    exact: true,
+  },
+  {
+    path: ABOUT_PURE_COMP,
+    component: AboutPureComponents,
+    exact: true,
+  },
+  {
+    path: ABOUT_TYPE_SCRIPT,
+    component: AboutTypeScript,
+    exact: true,
+  },
+  {
+    path: ABOUT_INTERFACES,
+    component: AboutInterfaces,
+    exact: true,
+  },
+  {
+    path: ABOUT_ENUMS,
+    component: AboutEnums,
+    exact: true,
+  },
+  {
+    path: ABOUT_GENERICS,
+    component: AboutGenerics,
+    exact: true,
+  },
+  {
+    path: ABOUT_DECORATORS,
+    component: AboutDecorators,
+    exact: true,
+  },
+  {
+    path: ABOUT_NAMESPACES,
+    component: AboutNamespaces,
+    exact: true,
+  },
+  {
+    path: ABOUT_MODULES,
+    component: AboutModules,
+    exact: true,
+  },
+  {
+    path: ABOUT_CLASSES,
+    component: AboutClasses,
+    exact: true,
+  },
+  {
+    path: ABOUT_REDUX,
+    component: AboutRedux,
     exact: true,
   },
 
+  {
+    path: ABOUT_PURE_FUNCTION,
+    component: AboutPureFunction,
+    exact: true,
+  },
+  {
+    path: ABOUT_TESTING,
+    component: AboutTesting,
+    exact: true,
+  },
 ];
