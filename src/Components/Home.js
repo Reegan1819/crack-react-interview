@@ -7,6 +7,7 @@ import {
   ABOUT_PURE_COMP,
   ABOUT_PURE_FUNCTION,
   ABOUT_REACT,
+  ABOUT_REACT_ROUTER,
   ABOUT_REDUX,
   ABOUT_TESTING,
   ABOUT_TYPE_SCRIPT,
@@ -34,17 +35,25 @@ const Home = () => {
         About TypeScript
       </NavLink>
       <h2>Redux</h2>
-      <Link to={ABOUT_REDUX} style={{ padding: "20px" }}>
+      <Link to={ABOUT_REDUX} style={{ padding: "0px" }}>
         About Redux
       </Link>
       <br />
-      <Link to={ABOUT_PURE_FUNCTION} style={{ padding: "20px" }}>
+      <br />
+      <Link to={ABOUT_PURE_FUNCTION} >
         About Pure Function
       </Link>
       <br />
-      <Link to={ABOUT_TESTING} style={{ padding: "20px" }}>
+      <br />
+      <Link to={ABOUT_TESTING} style={{ padding: "0px" }}>
         About Testing
       </Link>
+      <br />
+      <br />
+       <Link to={ABOUT_REACT_ROUTER} style={{ padding: "0px" }}>
+        About React Router
+      </Link>
+
     </div>
   );
 };

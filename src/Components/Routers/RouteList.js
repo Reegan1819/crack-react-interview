@@ -48,7 +48,9 @@ import {
   ABOUT_REDUX,
   ABOUT_PURE_FUNCTION,
   ABOUT_TESTING,
+  ABOUT_REACT_ROUTER,
 } from "./RouteEndpoints";
+import AboutReactRouter from "../ReactRouter/AboutReactRouter";
 
 export const RouteList = [
   {
@@ -174,6 +176,11 @@ export const RouteList = [
   {
     path: ABOUT_TESTING,
     component: AboutTesting,
+    exact: true,
+  },
+  {
+    path: ABOUT_REACT_ROUTER,
+    component: AboutReactRouter,
     exact: true,
   },
 ];
