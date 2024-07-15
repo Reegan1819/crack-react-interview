@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/crack-react-interview/static/css/main.e4e799cb.css",
-    "main.js": "/crack-react-interview/static/js/main.0a304a32.js",
+    "main.js": "/crack-react-interview/static/js/main.d5473b02.js",
     "index.html": "/crack-react-interview/index.html",
     "main.e4e799cb.css.map": "/crack-react-interview/static/css/main.e4e799cb.css.map",
-    "main.0a304a32.js.map": "/crack-react-interview/static/js/main.0a304a32.js.map"
+    "main.d5473b02.js.map": "/crack-react-interview/static/js/main.d5473b02.js.map"
   },
   "entrypoints": [
     "static/css/main.e4e799cb.css",
-    "static/js/main.0a304a32.js"
+    "static/js/main.d5473b02.js"
   ]
 }
