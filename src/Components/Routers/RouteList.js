@@ -49,8 +49,10 @@ import {
   ABOUT_PURE_FUNCTION,
   ABOUT_TESTING,
   ABOUT_REACT_ROUTER,
+  ABOUT_NEXT_JS,
 } from "./RouteEndpoints";
 import AboutReactRouter from "../ReactRouter/AboutReactRouter";
+import AboutNextJs from "../../Comp/AboutNextJs";
 
 export const RouteList = [
   {
@@ -181,6 +183,11 @@ export const RouteList = [
   {
     path: ABOUT_REACT_ROUTER,
     component: AboutReactRouter,
+    exact: true,
+  },
+  {
+    path: ABOUT_NEXT_JS,
+    component: AboutNextJs,
     exact: true,
   },
 ];

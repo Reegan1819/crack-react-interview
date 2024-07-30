@@ -35,4 +35,5 @@ export const ABOUT_REDUX = "/crack-react-interview/about-redux";
 export const ABOUT_PURE_FUNCTION = "/crack-react-interview/about-pure-function";
 export const ABOUT_TESTING = "/crack-react-interview/about-testing";
 export const ABOUT_REACT_ROUTER = "/crack-react-interview/about-react-router";
+export const ABOUT_NEXT_JS = "/crack-react-interview/about-next-js";
 

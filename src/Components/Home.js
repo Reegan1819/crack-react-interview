@@ -11,6 +11,7 @@ import {
   ABOUT_REDUX,
   ABOUT_TESTING,
   ABOUT_TYPE_SCRIPT,
+  ABOUT_NEXT_JS,
 } from "./Routers/RouteEndpoints";
 
 const Home = () => {
@@ -40,9 +41,7 @@ const Home = () => {
       </Link>
       <br />
       <br />
-      <Link to={ABOUT_PURE_FUNCTION} >
-        About Pure Function
-      </Link>
+      <Link to={ABOUT_PURE_FUNCTION}>About Pure Function</Link>
       <br />
       <br />
       <Link to={ABOUT_TESTING} style={{ padding: "0px" }}>
@@ -50,10 +49,15 @@ const Home = () => {
       </Link>
       <br />
       <br />
-       <Link to={ABOUT_REACT_ROUTER} style={{ padding: "0px" }}>
+      <Link to={ABOUT_REACT_ROUTER} style={{ padding: "0px" }}>
         About React Router
       </Link>
 
+      <br />
+      <br />
+      <Link to={ABOUT_NEXT_JS} style={{ padding: "0px" }}>
+        About Next Js
+      </Link>
     </div>
   );
 };
