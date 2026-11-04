@@ -12,6 +12,7 @@ import {
   ABOUT_TESTING,
   ABOUT_TYPE_SCRIPT,
   ABOUT_NEXT_JS,
+  INTERVIEW_QUESTIONS,
 } from "./Routers/RouteEndpoints";
 
 const Home = () => {
@@ -57,6 +58,12 @@ const Home = () => {
       <br />
       <Link to={ABOUT_NEXT_JS} style={{ padding: "0px" }}>
         About Next Js
+      </Link>
+
+      <br />
+      <br />
+      <Link to={INTERVIEW_QUESTIONS} style={{ padding: "0px" }}>
+        Interview Questions
       </Link>
     </div>
   );

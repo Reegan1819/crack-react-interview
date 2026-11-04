@@ -50,7 +50,9 @@ import {
   ABOUT_TESTING,
   ABOUT_REACT_ROUTER,
   ABOUT_NEXT_JS,
+  INTERVIEW_QUESTIONS,
 } from "./RouteEndpoints";
+import InterviewQuestions from "../InterviewQuestions/InterviewQuestions";
 import AboutReactRouter from "../ReactRouter/AboutReactRouter";
 import AboutNextJs from "../../Comp/AboutNextJs";
 
@@ -188,6 +190,11 @@ export const RouteList = [
   {
     path: ABOUT_NEXT_JS,
     component: AboutNextJs,
+    exact: true,
+  },
+  {
+    path: INTERVIEW_QUESTIONS,
+    component: InterviewQuestions,
     exact: true,
   },
 ];
