@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import CodeBlock from "./CodeBlock";
 import questions from "./questions";
@@ -24,8 +24,31 @@ const LiveDemo = ({ Demo }) => {
   );
 };
 
+const matches = (item, term) =>
+  [item.q, item.a, ...(item.points || []), item.code || ""]
+    .join("\n")
+    .toLowerCase()
+    .includes(term);
+
 const InterviewQuestions = () => {
   const [allOpen, setAllOpen] = useState(false);
+  const [search, setSearch] = useState("");
+
+  // keep each section's original index so the #section-N anchors stay stable
+  const visibleSections = useMemo(() => {
+    const term = search.trim().toLowerCase();
+    return questions
+      .map((section, index) => ({
+        ...section,
+        index,
+        items: term
+          ? section.items.filter((item) => matches(item, term))
+          : section.items,
+      }))
+      .filter((section) => section.items.length > 0);
+  }, [search]);
+
+  const matchCount = visibleSections.reduce((n, s) => n + s.items.length, 0);
 
   return (
     <div style={{ padding: "20px" }}>
@@ -33,26 +56,46 @@ const InterviewQuestions = () => {
       <h1>React and JavaScript Interview Questions</h1>
       <p>
         Questions from a customer interview round (Cisco), with answers and
-        examples. Click a question to see the answer. Live demos are rendered
+        examples. Search by question or keyword, then click a question to see
+        the answer. Live demos are rendered
         under the answer, and their source is in{" "}
         <code>src/Components/InterviewQuestions/Examples</code>. See also{" "}
         <Link to={ABOUT_REACT}>About React</Link>.
       </p>
+      <input
+        type="search"
+        placeholder="Search questions"
+        aria-label="Search questions"
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        style={{ padding: "6px", width: "320px", marginRight: "8px" }}
+      />
       <button onClick={() => setAllOpen((open) => !open)}>
         {allOpen ? "Collapse all" : "Expand all"}
       </button>
+      {search.trim() && (
+        <p>
+          {matchCount} matching question{matchCount === 1 ? "" : "s"}
+        </p>
+      )}
 
-      <h2>Contents</h2>
-      <ul>
-        {questions.map((section, i) => (
-          <li key={section.title}>
-            <a href={"#section-" + i}>{section.title}</a>
-          </li>
-        ))}
-      </ul>
+      {matchCount === 0 && <p>No matching questions found</p>}
 
-      {questions.map((section, i) => (
-        <section key={section.title} id={"section-" + i}>
+      {matchCount > 0 && (
+        <>
+          <h2>Contents</h2>
+          <ul>
+            {visibleSections.map((section) => (
+              <li key={section.title}>
+                <a href={"#section-" + section.index}>{section.title}</a>
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
+
+      {visibleSections.map((section) => (
+        <section key={section.title} id={"section-" + section.index}>
           <h2>{section.title}</h2>
           {section.items.map((item) => {
             const Demo = item.demo;

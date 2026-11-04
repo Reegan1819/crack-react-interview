@@ -46,6 +46,23 @@ describe("InterviewQuestions", () => {
     expect(global.fetch).toHaveBeenCalledTimes(1);
   });
 
+  test("search filters questions, shows an empty state and restores all", () => {
+    renderPage();
+    const box = screen.getByPlaceholderText("Search questions");
+    const total = questions.flatMap((s) => s.items).length;
+
+    fireEvent.change(box, { target: { value: "CLOSURE" } });
+    expect(screen.getByText("What is a Closure?")).toBeInTheDocument();
+    expect(screen.queryByText("What are keys in React lists?")).toBeNull();
+
+    fireEvent.change(box, { target: { value: "zzzz-no-such-thing" } });
+    expect(screen.getByText("No matching questions found")).toBeInTheDocument();
+
+    fireEvent.change(box, { target: { value: "" } });
+    expect(screen.getByText("What are keys in React lists?")).toBeInTheDocument();
+    expect(screen.getAllByRole("group")).toHaveLength(total);
+  });
+
   test("section titles and questions are unique", () => {
     const titles = questions.map((s) => s.title);
     const qs = questions.flatMap((s) => s.items.map((i) => i.q));
